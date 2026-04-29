@@ -356,10 +356,10 @@ async def startup():
     timeline_count = await db.timeline.count_documents({})
     if timeline_count == 0:
         sample_timeline = [
-            {"id": "inicio", "date": "2026-03-01", "title": "Início do projeto", "description": "A turma 7.E iniciou o projeto sobre o Douro.", "created_at": datetime.now(timezone.utc).isoformat()},
-            {"id": "pesquisa", "date": "2026-04-01", "title": "Início das pesquisas", "description": "Pesquisa sobre a história, cultura e tradições do Douro.", "created_at": datetime.now(timezone.utc).isoformat()},
-            {"id": "visita", "date": "2026-04-27", "title": "Visita ao Museu do Douro", "description": "Visita de estudo ao Museu do Douro.", "created_at": datetime.now(timezone.utc).isoformat()},
-            {"id": "blogue", "date": "2026-05-01", "title": "Lançamento do blogue", "description": "Publicação do blogue com todos os nossos trabalhos.", "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": "inicio", "date": "Março de 2026", "title": "Início do projeto", "description": "A turma 7.E iniciou o projeto sobre o Douro.", "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": "pesquisa", "date": "Abril de 2026", "title": "Início das pesquisas", "description": "Pesquisa sobre a história, cultura e tradições do Douro.", "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": "visita", "date": "27 de abril de 2026", "title": "Visita ao Museu do Douro", "description": "Visita de estudo ao Museu do Douro.", "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": "blogue", "date": "Maio de 2026", "title": "Lançamento do blogue", "description": "Publicação do blogue com todos os nossos trabalhos.", "created_at": datetime.now(timezone.utc).isoformat()},
         ]
         await db.timeline.insert_many(sample_timeline)
         logger.info("Sample timeline seeded")

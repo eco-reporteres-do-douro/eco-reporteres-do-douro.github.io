@@ -61,7 +61,7 @@ export default function TimelinePage() {
 
                     <div>
                       <p className="text-xs tracking-[0.15em] uppercase font-semibold text-[#7C3A00] mb-1">
-                        {new Date(event.date).toLocaleDateString('pt-PT', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        {event.date}
                       </p>
                       <h3 className="font-['Playfair_Display'] text-xl md:text-2xl font-semibold text-[#2D1A11] mb-2">
                         {event.title}
