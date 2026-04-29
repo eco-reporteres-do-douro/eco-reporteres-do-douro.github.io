@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "sonner";
@@ -11,11 +11,9 @@ export default function LoginPage() {
   const { login, user } = useAuth();
   const navigate = useNavigate();
 
-  // Redirect if already logged in
-  if (user) {
-    navigate("/admin");
-    return null;
-  }
+  useEffect(() => {
+    if (user) navigate("/admin");
+  }, [user, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
