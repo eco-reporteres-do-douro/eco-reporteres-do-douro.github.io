@@ -1,53 +1,45 @@
-import { useEffect } from "react";
-import "@/App.css";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import { AuthProvider } from "./context/AuthContext";
+import { Toaster } from "./components/ui/sonner";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import WorksPage from "./pages/WorksPage";
+import PostPage from "./pages/PostPage";
+import GalleryPage from "./pages/GalleryPage";
+import TimelinePage from "./pages/TimelinePage";
+import TeamPage from "./pages/TeamPage";
+import LoginPage from "./pages/LoginPage";
+import AdminDashboard from "./pages/AdminDashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <div className="min-h-screen flex flex-col" data-testid="app-container">
+          <Header />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/sobre" element={<AboutPage />} />
+              <Route path="/trabalhos" element={<WorksPage />} />
+              <Route path="/trabalhos/:category" element={<WorksPage />} />
+              <Route path="/post/:postId" element={<PostPage />} />
+              <Route path="/galeria" element={<GalleryPage />} />
+              <Route path="/cronologia" element={<TimelinePage />} />
+              <Route path="/equipa" element={<TeamPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+        <Toaster />
       </BrowserRouter>
-    </div>
+    </AuthProvider>
   );
 }
 
