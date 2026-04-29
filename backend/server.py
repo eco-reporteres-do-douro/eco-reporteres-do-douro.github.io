@@ -250,7 +250,7 @@ async def delete_gallery_item(item_id: str, request: Request):
 # --- Timeline ---
 @api_router.get("/timeline")
 async def get_timeline():
-    events = await db.timeline.find({}, {"_id": 0}).sort("date", 1).to_list(100)
+    events = await db.timeline.find({}, {"_id": 0}).sort("created_at", 1).to_list(100)
     return events
 
 @api_router.post("/timeline")
