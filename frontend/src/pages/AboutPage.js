@@ -32,12 +32,11 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-2">
               <div className="sticky top-24">
-                <div className="overflow-hidden">
-                  <img
-                    src="https://images.pexels.com/photos/26593312/pexels-photo-26593312.jpeg"
-                    alt="Turma 7.E"
-                    className="w-full h-auto object-cover"
-                  />
+                <div className="overflow-hidden bg-[#722F37] flex items-center justify-center py-16">
+                  <div className="text-center">
+                    <span className="font-['Playfair_Display'] text-6xl font-bold text-[#FDFBF7]">7.E</span>
+                    <p className="text-sm text-[#F4F0E6]/70 mt-3">Turma 7.E</p>
+                  </div>
                 </div>
                 <div className="mt-8 p-6 bg-[#F4F0E6]">
                   <h3 className="font-['Playfair_Display'] text-xl font-semibold text-[#2D1A11] mb-3">O Projeto</h3>

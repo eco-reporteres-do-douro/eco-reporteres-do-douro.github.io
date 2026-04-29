@@ -67,12 +67,13 @@ export default function HomePage() {
                 Saber mais <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="overflow-hidden">
-              <img
-                src="https://images.pexels.com/photos/26593312/pexels-photo-26593312.jpeg"
-                alt="Turma 7.E"
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
-              />
+            <div className="overflow-hidden bg-[#F4F0E6] h-80 flex items-center justify-center">
+              <div className="text-center p-8">
+                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[#722F37] flex items-center justify-center">
+                  <span className="font-['Playfair_Display'] text-3xl font-bold text-[#FDFBF7]">7.E</span>
+                </div>
+                <p className="text-sm text-[#5C4A41]">Turma 7.E &mdash; Unidos pela descoberta</p>
+              </div>
             </div>
           </div>
         </div>
