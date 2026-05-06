@@ -100,6 +100,20 @@ export default function PostPage() {
           <div className="text-base md:text-lg leading-relaxed text-[#5C4A41] whitespace-pre-wrap" data-testid="post-content">
             {post.content}
           </div>
+
+          {/* Post Images Gallery */}
+          {post.images && post.images.length > 0 && (
+            <div className="mt-12 space-y-6" data-testid="post-images">
+              <h3 className="font-['Playfair_Display'] text-2xl font-semibold text-[#2D1A11]">Fotografias</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {post.images.map((img, idx) => (
+                  <div key={idx} className="overflow-hidden">
+                    <img src={img} alt={`Fotografia ${idx + 1}`} className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
