@@ -91,7 +91,7 @@ export default function HomePage() {
             <Link to="/trabalhos/museu-do-douro" className="md:col-span-4 lg:col-span-5 group" data-testid="theme-museu">
               <div className="overflow-hidden h-80 relative">
                 <img
-                  src="https://images.pexels.com/photos/34930529/pexels-photo-34930529.jpeg"
+                  src="https://customer-assets.emergentagent.com/job_douro-class-7e/artifacts/4rl916vj_IMG_9080.JPG"
                   alt="Museu do Douro"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

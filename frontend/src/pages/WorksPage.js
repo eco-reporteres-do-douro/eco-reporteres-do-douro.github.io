@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 const API = process.env.REACT_APP_BACKEND_URL;
 
 const categoryImages = {
-  "museu-do-douro": "https://images.pexels.com/photos/34930529/pexels-photo-34930529.jpeg",
+  "museu-do-douro": "https://customer-assets.emergentagent.com/job_douro-class-7e/artifacts/4rl916vj_IMG_9080.JPG",
   "paisagem": "https://images.pexels.com/photos/32906683/pexels-photo-32906683.jpeg",
   "gastronomia": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb",
   "historia": "https://images.pexels.com/photos/34930529/pexels-photo-34930529.jpeg",
