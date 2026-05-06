@@ -21,7 +21,7 @@ export default function HomePage() {
               Projeto Turma 7.E
             </p>
             <h1 className="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-bold text-[#FDFBF7] leading-none tracking-tighter mb-6 opacity-0 animate-fade-in-up" style={{animationDelay: '0.3s', animationFillMode: 'forwards'}}>
-              Descobrindo<br />o Douro
+              Na descoberta<br />do Douro
             </h1>
             <p className="text-base md:text-lg text-[#F4F0E6]/80 leading-relaxed mb-8 max-w-lg opacity-0 animate-fade-in-up" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
               Exploramos a história, a cultura, a paisagem e as tradições de uma das regiões mais fascinantes de Portugal.
