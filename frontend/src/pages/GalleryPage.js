@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Lightbox from "../components/Lightbox";
 
 const API = process.env.REACT_APP_BACKEND_URL;
 
 export default function GalleryPage() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     fetchGallery();
@@ -55,9 +58,10 @@ export default function GalleryPage() {
               {displayItems.map((item, idx) => (
                 <div
                   key={item.id}
-                  className="break-inside-avoid group overflow-hidden opacity-0 animate-fade-in-up"
+                  className="break-inside-avoid group overflow-hidden opacity-0 animate-fade-in-up cursor-pointer"
                   style={{ animationDelay: `${idx * 0.1}s`, animationFillMode: 'forwards' }}
                   data-testid={`gallery-item-${item.id}`}
+                  onClick={() => { setLightboxIndex(idx); setLightboxOpen(true); }}
                 >
                   <div className="relative overflow-hidden">
                     <img
@@ -79,6 +83,10 @@ export default function GalleryPage() {
             </div>
           )}
         </div>
+
+        {lightboxOpen && (
+          <Lightbox images={displayItems} initialIndex={lightboxIndex} onClose={() => setLightboxOpen(false)} />
+        )}
       </section>
     </div>
   );
