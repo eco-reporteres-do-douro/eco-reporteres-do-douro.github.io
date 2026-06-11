@@ -193,6 +193,8 @@ async def get_categories():
         {"id": "gastronomia", "name": "Gastronomia", "description": "Gastronomia e vinhos do Douro"},
         {"id": "historia", "name": "História", "description": "História e tradições do Douro"},
         {"id": "cultura", "name": "Cultura", "description": "Cultura e património do Douro"},
+        {"id": "ciencias", "name": "Ciências", "description": "Trabalhos de Ciências"},
+        {"id": "matematica", "name": "Matemática", "description": "Trabalhos de Matemática"},
         {"id": "outros", "name": "Outros", "description": "Outros trabalhos e projetos"},
     ]
 

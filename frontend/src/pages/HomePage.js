@@ -152,6 +152,34 @@ export default function HomePage() {
                 </div>
               </div>
             </Link>
+            <Link to="/trabalhos/ciencias" className="md:col-span-4 lg:col-span-6 group" data-testid="theme-ciencias">
+              <div className="overflow-hidden h-64 relative">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_douro-class-7e/artifacts/mc4bta43_IMG_9951.jpeg"
+                  alt="Ciências"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2D1A11]/70 to-transparent" />
+                <div className="absolute bottom-6 left-6">
+                  <p className="text-xs tracking-[0.15em] uppercase text-[#F4F0E6]/70 mb-1">Tema</p>
+                  <h3 className="font-['Playfair_Display'] text-2xl font-semibold text-[#FDFBF7]">Ciências</h3>
+                </div>
+              </div>
+            </Link>
+            <Link to="/trabalhos/matematica" className="md:col-span-4 lg:col-span-6 group" data-testid="theme-matematica">
+              <div className="overflow-hidden h-64 relative">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_douro-class-7e/artifacts/ggum7bxs_IMG_9954.jpeg"
+                  alt="Matemática"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2D1A11]/70 to-transparent" />
+                <div className="absolute bottom-6 left-6">
+                  <p className="text-xs tracking-[0.15em] uppercase text-[#F4F0E6]/70 mb-1">Tema</p>
+                  <h3 className="font-['Playfair_Display'] text-2xl font-semibold text-[#FDFBF7]">Matemática</h3>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
