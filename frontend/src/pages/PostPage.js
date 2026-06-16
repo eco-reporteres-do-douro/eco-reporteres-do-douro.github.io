@@ -4,6 +4,7 @@ import axios from "axios";
 import { ArrowLeft, Calendar, User, FileText } from "lucide-react";
 import { toast } from "sonner";
 import Lightbox from "../components/Lightbox";
+import staticData from "../data/static-posts.json";
 
 const API = process.env.REACT_APP_BACKEND_URL;
 
@@ -31,7 +32,12 @@ export default function PostPage() {
       setPost(postRes.data);
       setComments(commentsRes.data);
     } catch (err) {
-      console.error(err);
+      console.warn("Backend unreachable — using static post/comment fallback", err);
+      // fallback to static data
+      const fallback = staticData.posts.find(p => p.id === postId) || null;
+      setPost(fallback);
+      const fallbackComments = staticData.comments.filter(c => c.post_id === postId) || [];
+      setComments(fallbackComments);
     } finally {
       setLoading(false);
     }
@@ -48,7 +54,12 @@ export default function PostPage() {
       setMessage("");
       toast.success("Comentário publicado!");
     } catch {
-      toast.error("Erro ao publicar comentário.");
+      // If backend not available, add comment locally to state as fallback
+      const localComment = { id: `local-${Date.now()}`, name, message, post_id: postId, created_at: new Date().toISOString() };
+      setComments([localComment, ...comments]);
+      setName("");
+      setMessage("");
+      toast.success("Comentário guardado localmente (offline)");
     } finally {
       setSubmitting(false);
     }

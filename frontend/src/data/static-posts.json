@@ -1,0 +1,53 @@
+{
+  "categories": [
+    { "id": "museu-do-douro", "name": "Museu do Douro", "description": "Trabalhos sobre o Museu do Douro" },
+    { "id": "paisagem", "name": "Paisagem", "description": "A paisagem e natureza do Douro" },
+    { "id": "gastronomia", "name": "Gastronomia", "description": "Gastronomia e vinhos do Douro" },
+    { "id": "historia", "name": "História", "description": "História e tradições do Douro" },
+    { "id": "cultura", "name": "Cultura", "description": "Cultura e património do Douro" },
+    { "id": "outros", "name": "Outros", "description": "Outros trabalhos e projetos" }
+  ],
+  "posts": [
+    {
+      "id": "p1",
+      "title": "Vale do Douro",
+      "excerpt": "Uma panorâmica do Vale do Douro realizada pelos alunos.",
+      "category": "paisagem",
+      "cover_image": "https://images.pexels.com/photos/20095795/pexels-photo-20095795.jpeg",
+      "created_at": "2026-06-01T10:00:00Z"
+    },
+    {
+      "id": "p2",
+      "title": "Museu do Douro: visita",
+      "excerpt": "Registo da visita ao Museu do Douro, com notas e imagens.",
+      "category": "museu-do-douro",
+      "cover_image": "https://customer-assets.emergentagent.com/job_douro-class-7e/artifacts/4rl916vj_IMG_9080.JPG",
+      "created_at": "2026-06-02T11:30:00Z"
+    },
+    {
+      "id": "p3",
+      "title": "Receitas do Douro",
+      "excerpt": "Exploração de receitas e sabores locais.",
+      "category": "gastronomia",
+      "cover_image": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb",
+      "created_at": "2026-06-03T09:15:00Z"
+    }
+  ]
+  ,
+  "gallery": [
+    { "id": "g1", "title": "Vale do Douro", "description": "Vista panorâmica do vale", "image_url": "https://images.pexels.com/photos/20095795/pexels-photo-20095795.jpeg" },
+    { "id": "g2", "title": "Vinhas em socalcos", "description": "Os famosos terraços do Douro", "image_url": "https://images.pexels.com/photos/32906683/pexels-photo-32906683.jpeg" },
+    { "id": "g3", "title": "Museu do Douro", "description": "Um espaço de cultura", "image_url": "https://images.pexels.com/photos/34930529/pexels-photo-34930529.jpeg" }
+  ],
+  "timeline": [
+    { "id": "t1", "date": "2026-03-01", "title": "Projeto iniciado", "description": "Início das atividades da turma no projeto Douro." },
+    { "id": "t2", "date": "2026-04-15", "title": "Visita ao Museu", "description": "Visita guiada ao Museu do Douro." }
+  ],
+  "team": [
+    { "id": "m1", "name": "Aluno A", "role": "Investigador", "description": "Contribuições em pesquisa", "image_url": "" },
+    { "id": "m2", "name": "Aluno B", "role": "Fotógrafo", "description": "Registo fotográfico das visitas", "image_url": "" }
+  ],
+  "comments": [
+    { "id": "c1", "name": "João", "message": "Excelente trabalho!", "post_id": "p1", "created_at": "2026-06-05T10:00:00Z" }
+  ]
+}

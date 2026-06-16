@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import staticData from "../data/static-posts.json";
 import Lightbox from "../components/Lightbox";
 
 const API = process.env.REACT_APP_BACKEND_URL;
@@ -19,7 +20,8 @@ export default function GalleryPage() {
       const { data } = await axios.get(`${API}/api/gallery`);
       setItems(data);
     } catch (err) {
-      console.error(err);
+      console.warn("Backend unreachable — using static gallery fallback", err);
+      setItems(staticData.gallery || []);
     } finally {
       setLoading(false);
     }
@@ -34,7 +36,7 @@ export default function GalleryPage() {
     { id: "5", title: "Museu do Douro", description: "Um espaço de cultura", image_url: "https://images.pexels.com/photos/34930529/pexels-photo-34930529.jpeg" },
   ];
 
-  const displayItems = items.length > 0 ? items : defaultItems;
+  const displayItems = items.length > 0 ? items : (staticData.gallery && staticData.gallery.length > 0 ? staticData.gallery : defaultItems);
 
   return (
     <div className="pt-16" data-testid="gallery-page">

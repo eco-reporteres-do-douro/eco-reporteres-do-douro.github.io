@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import staticData from "../data/static-posts.json";
 
 const API = process.env.REACT_APP_BACKEND_URL;
 
@@ -16,7 +17,8 @@ export default function TeamPage() {
       const { data } = await axios.get(`${API}/api/team`);
       setMembers(data);
     } catch (err) {
-      console.error(err);
+      console.warn("Backend unreachable — using static team fallback", err);
+      setMembers(staticData.team || []);
     } finally {
       setLoading(false);
     }

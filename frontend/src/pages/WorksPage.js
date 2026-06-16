@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { ArrowRight } from "lucide-react";
+import staticData from "../data/static-posts.json";
 
 const API = process.env.REACT_APP_BACKEND_URL;
 
@@ -30,10 +31,28 @@ export default function WorksPage() {
         axios.get(`${API}/api/posts${category ? `?category=${category}` : ""}`),
         axios.get(`${API}/api/categories`),
       ]);
-      setPosts(postsRes.data);
-      setCategories(catsRes.data);
+      const fetchedPosts = Array.isArray(postsRes.data) ? postsRes.data : [];
+      const fetchedCategories = Array.isArray(catsRes.data) ? catsRes.data : [];
+
+      // If backend returned no posts, fall back to static data
+      if (fetchedPosts.length === 0) {
+        const fallbackPosts = category
+          ? staticData.posts.filter(p => p.category === category)
+          : staticData.posts;
+        setPosts(fallbackPosts);
+      } else {
+        setPosts(fetchedPosts);
+      }
+
+      setCategories(fetchedCategories.length ? fetchedCategories : staticData.categories);
     } catch (err) {
-      console.error(err);
+      // On error (no backend), use static data
+      console.warn("Backend unreachable — using static posts fallback", err);
+      const fallbackPosts = category
+        ? staticData.posts.filter(p => p.category === category)
+        : staticData.posts;
+      setPosts(fallbackPosts);
+      setCategories(staticData.categories);
     } finally {
       setLoading(false);
     }
