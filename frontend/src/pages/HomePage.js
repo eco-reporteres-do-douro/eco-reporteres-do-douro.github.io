@@ -56,7 +56,7 @@ export default function HomePage() {
                 Turma 7.E
               </h2>
               <p className="text-base md:text-lg leading-relaxed text-[#5C4A41] mb-8">
-                Somos a turma do 7.E, um grupo que comeou o seu percurso em conjunto apenas este ano. 
+                Somos a turma do 7.E, um grupo que começou o seu percurso em conjunto apenas este ano. 
                 Apesar de estarmos juntos há pouco tempo, já conseguimos criar um espírito de união e de entreajuda que nos caracteriza.
               </p>
               <Link
@@ -188,10 +188,10 @@ export default function HomePage() {
       <section className="py-24 md:py-32" data-testid="cta-section">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
           <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-semibold text-[#2D1A11] tracking-tight mb-6">
-            Acompanhe o nosso projeto
+            Acompanhem o nosso projeto
           </h2>
           <p className="text-base md:text-lg text-[#5C4A41] mb-8 max-w-xl mx-auto">
-            Deixe o seu comentário, explore a nossa galeria e descubra a cronologia do projeto.
+            Deixem o vosso comentário, explorem a nossa galeria e descubram a cronologia do projeto.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <Link to="/galeria" className="bg-[#722F37] text-[#FDFBF7] px-8 py-3 hover:bg-[#5A252B] transition-colors font-medium text-sm" data-testid="cta-gallery">

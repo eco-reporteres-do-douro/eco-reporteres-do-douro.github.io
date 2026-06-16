@@ -21,11 +21,11 @@ export default function LoginPage() {
     setLoading(true);
     try {
       await login(email, password);
-      toast.success("Login efetuado com sucesso!");
+      toast.success("Sessão iniciada com sucesso!");
       navigate("/admin");
     } catch (err) {
       const detail = err.response?.data?.detail;
-      const msg = typeof detail === "string" ? detail : Array.isArray(detail) ? detail.map(e => e.msg || JSON.stringify(e)).join(" ") : "Erro ao fazer login.";
+      const msg = typeof detail === "string" ? detail : Array.isArray(detail) ? detail.map(e => e.msg || JSON.stringify(e)).join(" ") : "Erro ao iniciar sessão.";
       setError(msg);
     } finally {
       setLoading(false);
@@ -61,13 +61,13 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label className="block text-xs tracking-[0.1em] uppercase font-semibold text-[#5C4A41] mb-2">Password</label>
+            <label className="block text-xs tracking-[0.1em] uppercase font-semibold text-[#5C4A41] mb-2">Palavra-passe</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full bg-transparent border-b border-[#7C3A00]/30 py-3 text-[#2D1A11] focus:border-[#722F37] focus:outline-none transition-colors"
-              placeholder="Introduza a password"
+              placeholder="Introduza a palavra-passe"
               required
               data-testid="login-password-input"
             />
