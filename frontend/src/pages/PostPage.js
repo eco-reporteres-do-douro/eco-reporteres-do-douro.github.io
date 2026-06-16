@@ -66,7 +66,7 @@ export default function PostPage() {
     return (
       <div className="min-h-screen flex items-center justify-center pt-16">
         <div className="text-center">
-          <p className="text-[#5C4A41] text-lg mb-4">Post não encontrado.</p>
+          <p className="text-[#5C4A41] text-lg mb-4">Publicação não encontrada.</p>
           <Link to="/trabalhos" className="text-[#722F37] font-medium">Voltar aos trabalhos</Link>
         </div>
       </div>
