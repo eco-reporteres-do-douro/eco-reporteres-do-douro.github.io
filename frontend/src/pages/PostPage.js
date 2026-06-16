@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { ArrowLeft, Calendar, User } from "lucide-react";
+import { ArrowLeft, Calendar, User, FileText } from "lucide-react";
 import { toast } from "sonner";
 import Lightbox from "../components/Lightbox";
 
@@ -103,6 +103,29 @@ export default function PostPage() {
           <div className="text-base md:text-lg leading-relaxed text-[#5C4A41] whitespace-pre-wrap" data-testid="post-content">
             {post.content}
           </div>
+
+          {/* Post Files/PDFs */}
+          {post.files && post.files.length > 0 && (
+            <div className="mt-12 space-y-4" data-testid="post-files">
+              <h3 className="font-['Playfair_Display'] text-2xl font-semibold text-[#2D1A11]">Ficheiros</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {post.files.map((file, idx) => (
+                  <a
+                    key={idx}
+                    href={file.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-4 bg-[#F4F0E6] hover:bg-[#E5DCD0] transition-colors group"
+                    data-testid={`post-file-${idx}`}
+                  >
+                    <FileText size={20} className="text-[#722F37] flex-shrink-0" />
+                    <span className="text-sm font-medium text-[#2D1A11] group-hover:text-[#722F37] transition-colors">{file.name}</span>
+                    <span className="text-xs text-[#5C4A41]/60 ml-auto">PDF</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Post Images Gallery */}
           {post.images && post.images.length > 0 && (

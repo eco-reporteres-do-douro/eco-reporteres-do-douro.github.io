@@ -155,7 +155,7 @@ export default function HomePage() {
             <Link to="/trabalhos/ciencias" className="md:col-span-4 lg:col-span-6 group" data-testid="theme-ciencias">
               <div className="overflow-hidden h-64 relative">
                 <img
-                  src="https://customer-assets.emergentagent.com/job_douro-class-7e/artifacts/mc4bta43_IMG_9951.jpeg"
+                  src="https://images.unsplash.com/photo-1604850849447-6435708cb130?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwxfHxzY2hpc3QlMjByb2NrcyUyMHZpbmV5YXJkJTIwUG9ydHVnYWx8ZW58MHx8fHwxNzgxNjE1ODk0fDA&ixlib=rb-4.1.0&q=85"
                   alt="Ciências"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
